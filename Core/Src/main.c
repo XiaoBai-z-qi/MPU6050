@@ -23,7 +23,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include <string.h>
+#include "oled.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,7 +92,10 @@ int main(void)
   MX_I2C1_Init();
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
-
+  OLED_Init();
+  OLED_ShowNum(0,0,1234567891,11,OLED_8X16);
+  OLED_ShowNum(0,16,1234567891,11,OLED_8X16);
+  OLED_Update();
   /* USER CODE END 2 */
 
   /* Infinite loop */

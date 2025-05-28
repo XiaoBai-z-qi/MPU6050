@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "oled.h": "c",
+        "define_conf.h": "c",
+        "mpu6050.h": "c",
+        "i2c.h": "c",
+        "string.h": "c",
+        "gpio.h": "c",
+        "stdio.h": "c"
+    }
+}
