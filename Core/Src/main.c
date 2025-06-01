@@ -26,6 +26,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "oled.h"
+#include "mpu6050.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -93,8 +94,8 @@ int main(void)
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
   OLED_Init();
-  OLED_ShowNum(0,0,1234567891,11,OLED_8X16);
-  OLED_ShowNum(0,16,1234567891,11,OLED_8X16);
+  uint8_t ID = MPU6050_ReadReg(0x75);
+  OLED_ShowHexNum(0, 1 , ID, 2, OLED_8X16);
   OLED_Update();
   /* USER CODE END 2 */
 
