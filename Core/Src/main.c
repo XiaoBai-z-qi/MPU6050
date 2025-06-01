@@ -94,15 +94,31 @@ int main(void)
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
   OLED_Init();
-  uint8_t ID = MPU6050_ReadReg(0x75);
-  OLED_ShowHexNum(0, 1 , ID, 2, OLED_8X16);
-  OLED_Update();
+  MPU6050_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    MPU6050_Update();
+    float ax = MPU6050_Get_Ax();
+    float ay = MPU6050_Get_Ay();
+    float az = MPU6050_Get_Az();
+    float temperature = MPU6050_Get_Temperature();
+    float gx = MPU6050_Get_Gx();
+    float gy = MPU6050_Get_Gy();
+    float gz = MPU6050_Get_Gz();
+    
+
+    OLED_ShowFloatNum(0,0,ax,3,6,OLED_6X8);
+    OLED_ShowFloatNum(0,10,ay,3,6,OLED_6X8);
+    OLED_ShowFloatNum(0,20,az,3,6,OLED_6X8);
+    OLED_ShowFloatNum(0,30,temperature,3,6,OLED_6X8);
+    OLED_ShowFloatNum(0,40,gx,3,6,OLED_6X8);
+    OLED_ShowFloatNum(0,50,gy,3,6,OLED_6X8);
+    OLED_ShowFloatNum(0,60,gz,3,6,OLED_6X8);
+    OLED_Update();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

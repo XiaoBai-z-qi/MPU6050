@@ -1,7 +1,17 @@
 #ifndef __MPU6050_H__
 #define __MPU6050_H__
-static void MPU6050_WriteReg(uint8_t RegAddr, uint8_t Data);
-uint8_t MPU6050_ReadReg(uint8_t RegAddr);
+void MPU6050_Init(void);
+
+void MPU6050_Update(void);
+float MPU6050_Get_Ax(void);
+float MPU6050_Get_Ay(void);
+float MPU6050_Get_Az(void);
+
+float MPU6050_Get_Temperature(void);
+
+float MPU6050_Get_Gx(void);
+float MPU6050_Get_Gy(void);
+float MPU6050_Get_Gz(void);
 
 
 #endif
