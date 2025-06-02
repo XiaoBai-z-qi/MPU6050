@@ -1,6 +1,7 @@
 #ifndef __MPU6050_H__
 #define __MPU6050_H__
 void MPU6050_Init(void);
+void MPU6050_Proc(void);
 
 void MPU6050_Update(void);
 float MPU6050_Get_Ax(void);

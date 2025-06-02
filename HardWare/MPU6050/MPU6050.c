@@ -5,7 +5,7 @@
 #define MPU6050_ADDR 0xD0
 
 static float ax, ay, az, gx, gy, gz, temperature;
-
+static float yaw, pitch, roll;  //欧拉角， 单位°
 static void MPU6050_WriteReg(uint8_t RegAddr, uint8_t Data)
 {
     HAL_I2C_Mem_Write(MPU6050_I2C, MPU6050_ADDR, RegAddr, I2C_MEMADD_SIZE_8BIT, &Data, 1, 1000);
@@ -26,6 +26,20 @@ void MPU6050_Init(void)
     
     MPU6050_WriteReg(MPU6050_GYRO_CONFIG, 0x18);    //设置陀螺仪传感器为±2000°/s
     MPU6050_WriteReg(MPU6050_ACCEL_CONFIG, 0x00);   //设置加速度传感器为±2g
+}
+
+void MPU6050_Proc(void)
+{
+    static uint32_t nxt = 0;
+    if (HAL_GetTick() < nxt) return;
+
+    MPU6050_Update();   //更新传感器的值
+
+    yaw     = yaw   + gz * 0.005;
+    pitch   = pitch + gx * 0.005;
+    roll    = roll  + gy * 0.005;
+
+    nxt += 5;
 }
 
 void MPU6050_Update(void)
