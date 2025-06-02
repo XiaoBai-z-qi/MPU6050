@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "i2c.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -27,6 +28,7 @@
 #include <string.h>
 #include "oled.h"
 #include "mpu6050.h"
+#include "MahonyAHRS.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,7 +49,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+volatile float q0 = 1.0f, q1 = 0.0f, q2 = 0.0f, q3 = 0.0f;
+MPU6050_Data_t data;
+float roll, pitch, yaw;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -58,7 +62,11 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+int fputc(int ch, FILE *f) {
+  (void)f;  // 忽略参数，避免警告
+  HAL_UART_Transmit(&huart1, (const uint8_t *)&ch, 1, 500); // 发送一个字节
+  return ch;
+}
 /* USER CODE END 0 */
 
 /**
@@ -92,6 +100,7 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   MX_I2C2_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   OLED_Init();
   MPU6050_Init();
@@ -99,26 +108,23 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint32_t last_update = 0;
+  uint32_t last_update2 = 0;
+
   while (1)
   {
-    MPU6050_Update();
-    float ax = MPU6050_Get_Ax();
-    float ay = MPU6050_Get_Ay();
-    float az = MPU6050_Get_Az();
-    float temperature = MPU6050_Get_Temperature();
-    float gx = MPU6050_Get_Gx();
-    float gy = MPU6050_Get_Gy();
-    float gz = MPU6050_Get_Gz();
-    
-
-    OLED_ShowFloatNum(0,0,ax,3,6,OLED_6X8);
-    OLED_ShowFloatNum(0,10,ay,3,6,OLED_6X8);
-    OLED_ShowFloatNum(0,20,az,3,6,OLED_6X8);
-    OLED_ShowFloatNum(0,30,temperature,3,6,OLED_6X8);
-    OLED_ShowFloatNum(0,40,gx,3,6,OLED_6X8);
-    OLED_ShowFloatNum(0,50,gy,3,6,OLED_6X8);
-    OLED_ShowFloatNum(0,60,gz,3,6,OLED_6X8);
-    OLED_Update();
+    if (HAL_GetTick() - last_update >= 5) {
+        last_update = HAL_GetTick();
+        MPU6050_Update(&data);
+        MahonyAHRSupdateIMU(data.Gx, data.Gy, data.Gz, data.Ax, data.Ay, data.Az);
+        GetEulerAnglesDeg(&roll, &pitch, &yaw);
+        
+    }
+    if (HAL_GetTick() - last_update2 >= 10) {
+        last_update2 = HAL_GetTick();
+        printf("%f,%f,%f,%f,%f,%f,%f,%f,%f\r\n",data.Ax, data.Ay, data.Az, data.Gx, data.Gy, data.Gz, roll, pitch, yaw);
+        
+    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
