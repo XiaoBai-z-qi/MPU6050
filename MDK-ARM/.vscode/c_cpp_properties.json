@@ -11,11 +11,16 @@
                 "d:\\Sourcetree\\Documents\\MPU6050\\HardWare\\OLED",
                 "d:\\Sourcetree\\Documents\\MPU6050\\HardWare\\MPU6050",
                 "d:\\Sourcetree\\Documents\\MPU6050\\HardWare",
+                "d:\\Sourcetree\\Documents\\MPU6050\\Middlewares\\Third_Party\\FreeRTOS\\Source\\include",
+                "d:\\Sourcetree\\Documents\\MPU6050\\Middlewares\\Third_Party\\FreeRTOS\\Source\\CMSIS_RTOS_V2",
+                "d:\\Sourcetree\\Documents\\MPU6050\\Middlewares\\Third_Party\\FreeRTOS\\Source\\portable\\RVDS\\ARM_CM3",
                 "D:\\keil5\\Keil5\\ARM\\ARMCC\\include",
                 "D:\\keil5\\Keil5\\ARM\\ARMCC\\include\\rw",
                 "d:\\Sourcetree\\Documents\\MPU6050\\MDK-ARM",
                 "d:\\Sourcetree\\Documents\\MPU6050\\Core\\Src",
-                "d:\\Sourcetree\\Documents\\MPU6050\\Drivers\\STM32F1xx_HAL_Driver\\Src"
+                "d:\\Sourcetree\\Documents\\MPU6050\\Drivers\\STM32F1xx_HAL_Driver\\Src",
+                "d:\\Sourcetree\\Documents\\MPU6050\\Middlewares\\Third_Party\\FreeRTOS\\Source",
+                "d:\\Sourcetree\\Documents\\MPU6050\\Middlewares\\Third_Party\\FreeRTOS\\Source\\portable\\MemMang"
             ],
             "defines": [
                 "USE_HAL_DRIVER",
