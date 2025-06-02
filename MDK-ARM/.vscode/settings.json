@@ -8,6 +8,11 @@
         "string.h": "c",
         "gpio.h": "c",
         "stdio.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "usart.h": "c",
+        "mahonyahrs.h": "c"
     }
 }

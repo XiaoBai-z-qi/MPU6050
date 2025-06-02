@@ -338,7 +338,11 @@
               <MiscControls>--no-multibyte-chars</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
+<<<<<<< HEAD
               <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../HardWare/OLED;../HardWare/MPU6050;../HardWare;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3</IncludePath>
+=======
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../HardWare/OLED;../HardWare/MPU6050;../HardWare;..\HardWare\MahonyAHRS</IncludePath>
+>>>>>>> 11
             </VariousControls>
           </Cads>
           <Aads>
@@ -758,11 +762,14 @@
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c</FilePath>
             </File>
             <File>
+<<<<<<< HEAD
               <FileName>stm32f1xx_hal_i2c.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c</FilePath>
             </File>
             <File>
+=======
+>>>>>>> 11
               <FileName>stm32f1xx_hal_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c</FilePath>
@@ -861,6 +868,7 @@
           </Files>
         </Group>
         <Group>
+<<<<<<< HEAD
           <GroupName>Middlewares/FreeRTOS</GroupName>
           <GroupOption>
             <CommonProperty>
@@ -1491,6 +1499,19 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
+=======
+          <GroupName>MahonyAHRS</GroupName>
+          <Files>
+            <File>
+              <FileName>MahonyAHRS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HardWare\MahonyAHRS\MahonyAHRS.c</FilePath>
+            </File>
+            <File>
+              <FileName>MahonyAHRS.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HardWare\MahonyAHRS\MahonyAHRS.h</FilePath>
+>>>>>>> 11
             </File>
           </Files>
         </Group>

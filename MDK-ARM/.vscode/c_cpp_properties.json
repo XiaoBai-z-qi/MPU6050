@@ -11,9 +11,13 @@
                 "d:\\Sourcetree\\Documents\\MPU6050\\HardWare\\OLED",
                 "d:\\Sourcetree\\Documents\\MPU6050\\HardWare\\MPU6050",
                 "d:\\Sourcetree\\Documents\\MPU6050\\HardWare",
+<<<<<<< HEAD
                 "d:\\Sourcetree\\Documents\\MPU6050\\Middlewares\\Third_Party\\FreeRTOS\\Source\\include",
                 "d:\\Sourcetree\\Documents\\MPU6050\\Middlewares\\Third_Party\\FreeRTOS\\Source\\CMSIS_RTOS_V2",
                 "d:\\Sourcetree\\Documents\\MPU6050\\Middlewares\\Third_Party\\FreeRTOS\\Source\\portable\\RVDS\\ARM_CM3",
+=======
+                "d:\\Sourcetree\\Documents\\MPU6050\\HardWare\\MahonyAHRS",
+>>>>>>> 11
                 "D:\\keil5\\Keil5\\ARM\\ARMCC\\include",
                 "D:\\keil5\\Keil5\\ARM\\ARMCC\\include\\rw",
                 "d:\\Sourcetree\\Documents\\MPU6050\\MDK-ARM",

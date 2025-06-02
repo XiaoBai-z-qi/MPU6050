@@ -9,6 +9,7 @@ GPIO.groupedBy=Group By Peripherals
 KeepUserPlacement=false
 Mcu.CPN=STM32F103C8T6
 Mcu.Family=STM32F1
+<<<<<<< HEAD
 Mcu.IP0=FREERTOS
 Mcu.IP1=I2C1
 Mcu.IP2=I2C2
@@ -17,12 +18,25 @@ Mcu.IP4=RCC
 Mcu.IP5=SYS
 Mcu.IP6=USART1
 Mcu.IPNb=7
+=======
+Mcu.IP0=I2C1
+Mcu.IP1=I2C2
+Mcu.IP2=NVIC
+Mcu.IP3=RCC
+Mcu.IP4=SYS
+Mcu.IP5=USART1
+Mcu.IPNb=6
+>>>>>>> 11
 Mcu.Name=STM32F103C(8-B)Tx
 Mcu.Package=LQFP48
 Mcu.Pin0=PD0-OSC_IN
 Mcu.Pin1=PD1-OSC_OUT
+<<<<<<< HEAD
 Mcu.Pin10=VP_FREERTOS_VS_CMSIS_V2
 Mcu.Pin11=VP_SYS_VS_tim4
+=======
+Mcu.Pin10=VP_SYS_VS_Systick
+>>>>>>> 11
 Mcu.Pin2=PB10
 Mcu.Pin3=PB11
 Mcu.Pin4=PA9
@@ -31,7 +45,11 @@ Mcu.Pin6=PA13
 Mcu.Pin7=PA14
 Mcu.Pin8=PB6
 Mcu.Pin9=PB7
+<<<<<<< HEAD
 Mcu.PinsNb=12
+=======
+Mcu.PinsNb=11
+>>>>>>> 11
 Mcu.ThirdPartyNb=0
 Mcu.UserConstants=
 Mcu.UserName=STM32F103C8Tx
@@ -45,6 +63,7 @@ NVIC.MemoryManagement_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false\:
 NVIC.NonMaskableInt_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false\:false
 NVIC.PendSV_IRQn=true\:15\:0\:false\:false\:false\:true\:false\:false\:false
 NVIC.PriorityGroup=NVIC_PRIORITYGROUP_4
+<<<<<<< HEAD
 NVIC.SVCall_IRQn=true\:0\:0\:false\:false\:false\:false\:false\:false\:false
 NVIC.SavedPendsvIrqHandlerGenerated=true
 NVIC.SavedSvcallIrqHandlerGenerated=true
@@ -54,6 +73,11 @@ NVIC.TIM4_IRQn=true\:15\:0\:false\:false\:true\:false\:false\:true\:true
 NVIC.TimeBase=TIM4_IRQn
 NVIC.TimeBaseIP=TIM4
 NVIC.UsageFault_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false\:false
+=======
+NVIC.SVCall_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false
+NVIC.SysTick_IRQn=true\:15\:0\:false\:false\:true\:false\:true\:false
+NVIC.UsageFault_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false
+>>>>>>> 11
 PA10.Mode=Asynchronous
 PA10.Signal=USART1_RX
 PA13.Mode=Serial_Wire
@@ -138,8 +162,13 @@ RCC.USBFreq_Value=72000000
 RCC.VCOOutput2Freq_Value=8000000
 USART1.IPParameters=VirtualMode
 USART1.VirtualMode=VM_ASYNC
+<<<<<<< HEAD
 VP_FREERTOS_VS_CMSIS_V2.Mode=CMSIS_V2
 VP_FREERTOS_VS_CMSIS_V2.Signal=FREERTOS_VS_CMSIS_V2
 VP_SYS_VS_tim4.Mode=TIM4
 VP_SYS_VS_tim4.Signal=SYS_VS_tim4
+=======
+VP_SYS_VS_Systick.Mode=SysTick
+VP_SYS_VS_Systick.Signal=SYS_VS_Systick
+>>>>>>> 11
 board=custom
